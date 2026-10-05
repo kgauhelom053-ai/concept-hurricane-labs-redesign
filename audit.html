@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile &amp; SEO audit of hurricanelabs.com (concept) | Kgauhelo Mokoena</title>
+<meta name="description" content="A short, evidence-based mobile and SEO audit of hurricanelabs.com: page titles, meta descriptions, structured data, headings, alt text, tap targets and contrast.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0c3963">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c3963'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' fill='%23fff' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Serif:opsz,wght@8..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept-bar" role="note">
+  Concept demo by Kgauhelo Mokoena, not affiliated with or commissioned by Hurricane Labs. <a href="./">Back to the Managed SOC concept</a>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="./" aria-label="Back to the Managed SOC concept">Hurricane&nbsp;Labs</a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="./">Managed SOC concept</a>
+      <a href="#issues">Issues</a>
+      <a href="#working">What’s working</a>
+      <a href="#method">How I checked</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Open menu"><span></span><span></span><span></span></summary>
+      <nav aria-label="Mobile">
+        <a href="./">Managed SOC concept</a>
+        <a href="#issues">Issues</a>
+        <a href="#working">What’s working</a>
+        <a href="#method">How I checked</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="audit-hero">
+    <p class="eyebrow">Audit · hurricanelabs.com</p>
+    <h1>What I’d fix for mobile and search</h1>
+    <p class="lede">A short list of real issues I found on the live site, each with the evidence and the fix. The site is already fast and stable, so most of the wins are in metadata, structure and accessibility, which can be fixed inside Framer without a rebuild.</p>
+    <div class="meta-row"><span>Checked 5 Oct 2026</span><span>Homepage + 25 core pages from sitemap.xml</span><span>390 px mobile and 1440 px desktop</span></div>
+    <div class="summary" aria-label="Summary">
+      <div><b>25 / 25</b><span>core pages share one title</span></div>
+      <div><b>0</b><span>pages with structured data</span></div>
+      <div><b>55 / 55</b><span>homepage images with empty alt</span></div>
+      <div><b>2</b><span>H1s on the homepage</span></div>
+    </div>
+  </section>
+
+  <section id="issues" aria-labelledby="issues-h">
+    <h2 id="issues-h" class="h2-sm" style="margin-top:48px">Issues, highest impact first</h2>
+    <div class="issues">
+
+      <article class="issue">
+        <header><span class="prio prio-high">High</span><span class="area">SEO</span><h3>1. Every core page has the same title: “Hurricane Labs”</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>All 25 non-blog URLs in <code>sitemap.xml</code> (homepage, <code>/managed-soc</code>, <code>/managed-siem</code>, <code>/veeries-mdr</code>, the five <code>/industries/…</code> pages, <code>/about-us</code>, <code>/contact-us</code>, <code>/packages</code>…) return <code>&lt;title&gt;Hurricane Labs&lt;/title&gt;</code>. Blog posts already have unique titles.</dd>
+          <dt>Why it matters</dt><dd>Search results and browser tabs can’t tell the service pages apart, and none of them say what the page offers.</dd>
+          <dt>Fix</dt><dd>A unique title for each page in Framer’s page SEO settings, e.g. <code>Managed SOC Services | 24/7 U.S.-Based SOC | Hurricane Labs</code> (shown on the <a href="./">concept page</a>).</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-high">High</span><span class="area">SEO</span><h3>2. One meta description reused on all 25 pages, and it’s too long</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>Every core page uses the same 203-character description starting “Whether you need a fully outsourced solution…”. Google usually shows about 150–160 characters, so it gets cut off.</dd>
+          <dt>Fix</dt><dd>A page-specific description of about 140–160 characters that names the service and the next step (the concept page uses 152).</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-high">High</span><span class="area">SEO</span><h3>3. No structured data anywhere</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>None of the 25 core pages contains <code>application/ld+json</code>, even though the footer already lists the address, phone and email.</dd>
+          <dt>Fix</dt><dd>Add Organization (name, address, phone, social profiles), Service on each service page, and BreadcrumbList, using Framer’s custom code in the page head. The concept page includes all of these plus FAQPage, as valid JSON-LD.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-high">High</span><span class="area">SEO · Mobile</span><h3>4. Link previews, favicon and home-screen icon all use the wide wordmark</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>Every page’s <code>og:image</code> and <code>twitter:image</code> is the same 1764×639 logo PNG. The same file is the light-mode favicon and the <code>apple-touch-icon</code>.</dd>
+          <dt>Why it matters</dt><dd>Shared links on LinkedIn or Slack get the same cropped logo for every page. A wide wordmark is unreadable at favicon size or as a phone home-screen icon.</dd>
+          <dt>Fix</dt><dd>A 1200×630 share image per key page, plus a square icon mark (180×180) for the favicon and touch icon.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">SEO · Accessibility</span><h3>5. Heading structure is broken in several places</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>The homepage has two H1s (the hero and the “Not sure where to start?” quiz), and so does <code>/packages</code>. <code>/contact-us</code> has no H1. On the homepage the testimonial is an H5 straight after an H2, which fails Lighthouse’s heading-order check. “Logo-less Security. By design.” is an H4 on desktop and an H2 on mobile.</dd>
+          <dt>Fix</dt><dd>One H1 per page, with H2 for sections and H3 for items inside them. Testimonials go in <code>&lt;blockquote&gt;</code>, not headings.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">SEO · Accessibility</span><h3>6. “We’re fully U.S.-based” reads as “We’re fully” and “-based”</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>In “Why teams choose us”, “U.S.” is a 94×72 image with <code>alt=""</code> placed between two separate H3 elements, so crawlers and screen readers get “We’re fully” and “-based”. This is one of your main selling points.</dd>
+          <dt>Fix</dt><dd>Make it one heading with “U.S.” as real text, and keep any flag graphic as decoration.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">SEO · Accessibility</span><h3>7. Every homepage image has empty alt text</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>All 55 <code>&lt;img&gt;</code> elements in the homepage HTML have <code>alt=""</code>, including large content images such as a 2000×1600 PNG. Lighthouse passes this because the attribute exists, but no image is actually described.</dd>
+          <dt>Fix</dt><dd>Short descriptive alt text on meaningful images, and keep <code>alt=""</code> only for decorative ones.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">SEO · Accessibility</span><h3>8. The headline stats aren’t readable as numbers</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>The animated counters under the hero are built from digit strips. In the HTML, the first stat reads <code>0 1 2 3 4 5 6 7 8 0 1 2 3 4 5 % of alerts handled by our team</code> instead of the figure shown on screen.</dd>
+          <dt>Fix</dt><dd>Put the final value in the markup as text (or as a visually hidden label) and keep the animation decorative with <code>aria-hidden</code>. The concept page shows the outcomes as plain text.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">Mobile · Accessibility</span><h3>9. Tiny, unlabelled carousel controls</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>The five carousel dot buttons are 8×8 px and have no accessible name. The “Scroll to page” arrows are 20×30 px. Lighthouse mobile flags both target size and button names.</dd>
+          <dt>Fix</dt><dd>Hit areas of at least 24×24 px (44×44 is better on phones) and labels such as <code>aria-label="Go to slide 2"</code>.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-med">Medium</span><span class="area">Accessibility</span><h3>10. Grey text below WCAG contrast, and unnamed social links</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>Quiz answer and intro text uses <code>#737C88</code> on white, a 4.23:1 contrast ratio (AA needs 4.5:1 for body text). Lighthouse also flags the “Logo-less Security” paragraph and the footer contact text. The footer LinkedIn and X icon links have no accessible name.</dd>
+          <dt>Fix</dt><dd>Darken the grey (for example <code>#5F6873</code> is 5.65:1) and add <code>aria-label</code> to the icon links.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-low">Low</span><span class="area">Performance</span><h3>11. Script weight on mobile</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd>My Lighthouse mobile lab run scored 92 for performance (FCP 2.5 s, LCP 2.5 s, CLS 0.003), which is good. It still reports 1.6 s of JavaScript execution and about 219 KiB of unused JavaScript. The biggest item is the HubSpot form embed (189 KiB, 109 KiB unused at load). The HTML document itself is 663 KB uncompressed, and the services cards, industry cards and “Talk to us” block each appear three times in the source, once per breakpoint.</dd>
+          <dt>Fix</dt><dd>Load the HubSpot form only when it scrolls into view, and trim duplicate breakpoint layers where one responsive layout will do.</dd>
+        </dl>
+      </article>
+
+      <article class="issue">
+        <header><span class="prio prio-low">Low</span><span class="area">SEO</span><h3>12. Sitemap housekeeping</h3></header>
+        <dl>
+          <dt>Evidence</dt><dd><code>/healthcare-2</code> is in the sitemap, but its content is project-based security and platform work (“Get critical security &amp; platform work done without adding another full-time hire”), not healthcare. <code>/conf26</code> is a post-event “Thanks for joining us at Splunk .conf26!” page that is also indexable.</dd>
+          <dt>Fix</dt><dd>Give the project page a descriptive slug with a 301 redirect, and mark event or campaign pages <code>noindex</code> or remove them from the sitemap.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="working" class="good" aria-labelledby="good-h">
+    <h2 id="good-h">What’s already working</h2>
+    <ul>
+      <li>HTTPS with HSTS, and the bare domain redirects to www with a 308</li>
+      <li>A canonical tag on every page checked</li>
+      <li><code>robots.txt</code> allows crawling and points to a 464-URL sitemap</li>
+      <li>Blog posts have unique, descriptive titles</li>
+      <li>Unknown URLs return a real 404</li>
+      <li>No horizontal scrolling at 390 px, and almost no layout shift (CLS 0.003)</li>
+    </ul>
+  </section>
+
+  <section id="method" class="method" aria-labelledby="method-h">
+    <h2 id="method-h">How I checked</h2>
+    <p>I fetched the homepage, <code>robots.txt</code>, <code>sitemap.xml</code> and the 25 non-blog sitemap URLs, and parsed titles, descriptions, canonicals, headings, images and JSON-LD. I loaded the homepage in headless Chrome at 390 px and 1440 px to check overflow, tap targets and rendered headings, and ran a Lighthouse mobile lab test (scores vary from run to run). Everything here can be re-checked with view-source or Lighthouse.</p>
+  </section>
+</main>
+
+<footer class="site-footer" style="margin-top:56px">
+  <div class="wrap legal" style="margin-top:0">
+    <p>Concept demo by Kgauhelo Mokoena, not affiliated with or commissioned by Hurricane Labs. Findings reflect the public website as checked on 5 October 2026.</p>
+  </div>
+</footer>
+</body>
+</html>

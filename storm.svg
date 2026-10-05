@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#c3e1f7" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#c3e1f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0099ff" stop-opacity=".0"/>
+      <stop offset="1" stop-color="#0099ff" stop-opacity=".28"/>
+    </linearGradient>
+  </defs>
+  <circle cx="280" cy="280" r="270" fill="url(#g)"/>
+  <g fill="none" stroke="#2d6893" stroke-opacity=".35">
+    <circle cx="280" cy="280" r="250"/>
+    <circle cx="280" cy="280" r="190" stroke-dasharray="2 8"/>
+    <circle cx="280" cy="280" r="130"/>
+    <circle cx="280" cy="280" r="70" stroke-dasharray="4 6"/>
+    <path d="M280 20v520M20 280h520" stroke-opacity=".18"/>
+  </g>
+  <path d="M280 280 L280 30 A250 250 0 0 1 496.5 155 Z" fill="url(#sweep)"/>
+  <g fill="none" stroke="#0c3963" stroke-linecap="round" stroke-opacity=".75">
+    <path d="M280 220a60 60 0 1 1-52 30" stroke-width="6"/>
+    <path d="M280 170a110 110 0 1 0 95 55" stroke-width="4" stroke-opacity=".45"/>
+    <path d="M280 120a160 160 0 1 1-138 80" stroke-width="3" stroke-opacity=".28"/>
+  </g>
+  <circle cx="280" cy="280" r="16" fill="#fff" stroke="#0099ff" stroke-width="4"/>
+  <g fill="#0099ff"><circle cx="402" cy="196" r="5"/><circle cx="172" cy="372" r="4" fill-opacity=".6"/><circle cx="350" cy="410" r="3.5" fill-opacity=".5"/></g>
+</svg>
